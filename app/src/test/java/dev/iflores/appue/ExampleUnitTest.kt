@@ -1,4 +1,4 @@
-package dev.lchang.appue
+package dev.iflores.appue
 
 import org.junit.Test
 
