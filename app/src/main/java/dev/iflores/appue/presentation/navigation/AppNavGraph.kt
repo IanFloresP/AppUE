@@ -8,6 +8,7 @@ import androidx.navigation.compose.rememberNavController
 import dev.iflores.appue.presentation.auth.LoginScreen
 import dev.iflores.appue.presentation.auth.RegisterScreen
 import dev.iflores.appue.presentation.home.HomeScreen
+import dev.iflores.appue.presentation.permissions.GalleryPremissionScreen
 
 
 @Composable
@@ -28,7 +29,7 @@ fun AppNavGraph(){
 
         composable("permissions") {
             DrawerScaffold(navController) {
-                Text("WIP - Permisos")
+                GalleryPremissionScreen()
             }//cierra drawer
         }//cierra composable permissions
 
