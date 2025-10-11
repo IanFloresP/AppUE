@@ -20,6 +20,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import dev.iflores.appue.data.model.CountryModel
+import dev.iflores.appue.presentation.components.CountryList
 
 val mockCountries = listOf(
     CountryModel("Colombia", 8,"https://flagcdn.com/w320/co.png"),
@@ -42,28 +43,11 @@ fun HomeScreen()
         Text(text = "Ranking FIFA 2025")
         Spacer(modifier = Modifier.height(8.dp))
 
-        LazyColumn {
-            items(mockCountries){ country ->
+        CountryList(
+            countries = mockCountries,
+            favorites = listOf("Argentina", "Brasil")
+        )
 
-                Card(
-                    modifier = Modifier.fillMaxSize().padding(vertical =8.dp)
-                ){
-                    Row(modifier = Modifier.padding(12.dp)) {
-                        Image(
-                            contentDescription = country.name,
-                            modifier = Modifier.size(64.dp),
-                            //contentScale = ContentScale.Crop,
-                            painter = rememberAsyncImagePainter(country.imageUrl)
-                        )
-                        Spacer(modifier = Modifier.width(12.dp))
-                        Column{
-                            Text(text = country.name, style = MaterialTheme.typography.titleMedium)
-                            Text(text = "Ranking FIFA: ${country.ranking}")
-                        }
-                    }
-                }
-            }
-        }
 
     }
 }

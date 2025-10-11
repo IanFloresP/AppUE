@@ -19,7 +19,7 @@ interface FavoriteCountryDao {
 
     //Get FavoriteCountryEntity
     @Query("SELECT * FROM favorite_countries")
-    suspend fun getAll(): Flow<List<FavoriteCountryEntity>>
+    fun getAll(): Flow<List<FavoriteCountryEntity>>
 
 
 
