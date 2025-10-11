@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
 }
 
 android {
@@ -9,7 +10,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "dev.lchang.appue"
+        applicationId = "dev.iflores.appue"
         minSdk = 33
         targetSdk = 36
         versionCode = 1
@@ -61,4 +62,9 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.9.4")
     //Coil compose
     implementation("io.coil-kt:coil-compose:2.7.0")
+    //Room database
+    implementation("androidx.room:room-runtime:2.6.0")
+    kapt("androidx.room:room-compiler:2.6.0")
+    implementation("androidx.room:room-ktx:2.6.0")
+
 }
